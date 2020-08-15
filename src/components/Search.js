@@ -13,7 +13,7 @@ function Search({ handleChange, handleSubmit, searchQuery }) {
             onChange={handleChange}
             placeholder="Enter Episode Name.."
           />
-          <button type="submit">
+          {/* <button type="submit">
             <span
               role="img"
               aria-label="magnifying-glass"
@@ -21,7 +21,7 @@ function Search({ handleChange, handleSubmit, searchQuery }) {
             >
               🔍
             </span>
-          </button>
+          </button> */}
         </form>
       </div>
       <div className="cover-page"></div>

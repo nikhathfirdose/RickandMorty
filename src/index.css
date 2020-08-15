@@ -18,6 +18,7 @@ body {
   background-color: rgb(255, 255, 255);
   z-index: 1;
   outline: 0.2vw solid black;
+  padding: 0 4vw;
 }
 .cover-page {
   width: 100vw;
@@ -29,15 +30,15 @@ body {
 }
 .title {
   text-transform: uppercase;
-  padding: 0 1.3vw;
+
   font-family: "Courier New", Courier, monospace;
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-weight: 700;
 }
 .search-bar {
   align-self: center;
   line-height: 1.6vw;
-  padding: 0 1.5vw;
+
   font-size: 0.85vw;
 }
 #cardItem {
@@ -65,7 +66,7 @@ body {
   display: inline-block;
   position: relative;
   top: 1vw;
-  right: -49vw;
+  right: -44vw;
   font-size: 1.2rem;
 }
 .page-link {

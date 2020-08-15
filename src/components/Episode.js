@@ -2,19 +2,20 @@ import React from "react";
 
 function Episode({ results }) {
   return (
-    <div>
-      {results
-        ? results.map((result) => (
-            <p className="episode-card" key={result.id}>
-              Name: {result.name}
-              <br />
-              Date:{result.air_date}
-              <br />
-              Episode:{result.episode}
-              <br />
-            </p>
-          ))
-        : "No Such Episode"}
+    <div className="container">
+      <div className="row">
+        {results
+          ? results.map((result) => (
+              <div id="cardItem" className="col-xs-1" key={result.id}>
+                <section>Name: {result.name}</section>
+
+                <section>Date:{result.air_date}</section>
+
+                <section>Episode:{result.episode}</section>
+              </div>
+            ))
+          : "No Such Episode"}
+      </div>
     </div>
   );
 }

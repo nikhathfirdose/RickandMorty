@@ -1,6 +1,6 @@
 import React from "react";
 
-function Pagination({ setPageNumber, info, results }) {
+function Pagination({ setPageNumber, info, searchQuery }) {
   const totalPages = info.pages;
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
@@ -9,7 +9,7 @@ function Pagination({ setPageNumber, info, results }) {
 
   return (
     <div>
-      {results
+      {!searchQuery
         ? pageNumbers.map((number) => (
             <button key={number} onClick={() => setPageNumber(number)}>
               {number}

@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = () => {
-      fetch(`https://rickandmortyapi.com/api/episode?page=${pageNumber}`)
+      fetch(`https://rickandmortyapi.com/api/episode/?page=${pageNumber}`)
         .then((resp) => resp.json())
         .then((data) => {
           setInfo(data.info);
@@ -36,9 +36,11 @@ function App() {
         .catch((err) => console.log(err));
     };
     fetchData();
-    searchData();
+    if (searchQuery) {
+      searchData();
+    }
   }, [pageNumber, url]);
-
+  const pageNumbers = [1, 2, 3];
   return (
     <div>
       <h1 className="title">Rick and Morty</h1>
@@ -48,7 +50,11 @@ function App() {
         searchQuery={searchQuery}
       />
       <Episode results={results} />
-      <Pagination results={results} setPageNumber={setPageNumber} info={info} />
+      <Pagination
+        searchQuery={searchQuery}
+        setPageNumber={setPageNumber}
+        info={info}
+      />
     </div>
   );
 }

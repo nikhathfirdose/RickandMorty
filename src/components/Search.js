@@ -11,14 +11,20 @@ function Search({ handleChange, handleSubmit, searchQuery }) {
             size="40"
             value={searchQuery}
             onChange={handleChange}
-            placeholder="Search by Episode Name.."
+            placeholder="Enter Episode Name.."
           />
           <button type="submit">
-            <span class="fa fa-search">🔍</span>
+            <span
+              role="img"
+              aria-label="magnifying-glass"
+              className="fa fa-search"
+            >
+              🔍
+            </span>
           </button>
         </form>
       </div>
-      <div className="cover-page">Image</div>
+      <div className="cover-page"></div>
     </div>
   );
 }

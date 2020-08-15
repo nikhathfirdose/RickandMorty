@@ -8,38 +8,34 @@ function App() {
   const [results, setResults] = useState([]);
   const [info, setInfo] = useState({});
   const [pageNumber, setPageNumber] = useState(1);
-  const [url, setUrl] = useState("https://rickandmortyapi.com/api/episode/");
-
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUrl(`https://rickandmortyapi.com/api/episode/?name=${searchQuery}`);
   };
 
   useEffect(() => {
     const fetchData = () => {
-      fetch(`https://rickandmortyapi.com/api/episode/?page=${pageNumber}`)
+      fetch(
+        `https://rickandmortyapi.com/api/episode/?name=${searchQuery}&page=${pageNumber}`
+      )
         .then((resp) => resp.json())
         .then((data) => {
-          setInfo(data.info);
+          if (data.info) {
+            setInfo(data.info);
+          } else {
+            setInfo(0);
+          }
+
           setResults(data.results);
         })
         .catch((err) => console.log(err));
     };
-    const searchData = () => {
-      fetch(url)
-        .then((resp) => resp.json())
-        .then((data) => setResults(data.results))
-        .catch((err) => console.log(err));
-    };
+
     fetchData();
-    if (searchQuery) {
-      searchData();
-    }
-  }, [pageNumber, url]);
+  }, [pageNumber, searchQuery]);
 
   return (
     <div>
@@ -48,12 +44,12 @@ function App() {
         handleSubmit={handleSubmit}
         searchQuery={searchQuery}
       />
-      <Episode results={results} />
       <Pagination
         searchQuery={searchQuery}
         setPageNumber={setPageNumber}
         info={info}
       />
+      <Episode results={results} />
     </div>
   );
 }

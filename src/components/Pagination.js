@@ -8,14 +8,40 @@ function Pagination({ setPageNumber, info, searchQuery }) {
   }
 
   return (
-    <div>
-      {!searchQuery
-        ? pageNumbers.map((number) => (
-            <button key={number} onClick={() => setPageNumber(number)}>
-              {number}
-            </button>
-          ))
-        : ""}
+    <div lassName="container">
+      <ul className="pagination">
+        {/* <li className="page-item">
+          <a className="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span className="sr-only">Previous</span>
+          </a>
+        </li> */}
+        <li
+          className="page-item"
+          style={{
+            display: "flex",
+          }}
+        >
+          {!searchQuery
+            ? pageNumbers.map((number) => (
+                <a
+                  className="page-link"
+                  key={number}
+                  onClick={() => setPageNumber(number)}
+                >
+                  {number}
+                </a>
+              ))
+            : ""}
+        </li>
+
+        {/* <li className="page-item">
+          <a className="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span className="sr-only">Next</span>
+          </a>
+        </li> */}
+      </ul>
     </div>
   );
 }

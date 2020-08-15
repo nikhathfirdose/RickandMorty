@@ -7,11 +7,9 @@ function Episode({ results }) {
         {results
           ? results.map((result) => (
               <div id="cardItem" className="col-xs-1" key={result.id}>
-                <section>Name: {result.name}</section>
-
-                <section>Date:{result.air_date}</section>
-
-                <section>Episode:{result.episode}</section>
+                <span className="episode-number">{result.episode}</span>
+                <span className="episode-name"> {result.name}</span>
+                <section className="episode-date">{result.air_date}</section>
               </div>
             ))
           : "No Such Episode"}

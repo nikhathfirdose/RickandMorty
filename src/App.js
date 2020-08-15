@@ -40,10 +40,9 @@ function App() {
       searchData();
     }
   }, [pageNumber, url]);
-  const pageNumbers = [1, 2, 3];
+
   return (
     <div>
-      <h1 className="title">Rick and Morty</h1>
       <Search
         handleChange={handleChange}
         handleSubmit={handleSubmit}

@@ -1,5 +1,5 @@
 <h1> Rick and Morty </h1>
-Page loads the Episodes of Rick and Morty with the functionality of search and pagination
+ Fetches data after making an API call and displays the episodes of Rick and Morty with functionality of search and pagination
 
 <h2> Screenshots </h2>
 

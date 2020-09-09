@@ -5,7 +5,7 @@
 
 ![Design](https://user-images.githubusercontent.com/40733044/92388113-5a12db00-f134-11ea-81d7-3c32f7bb4db6.png)
 
-List of all episodes:
+List of Episodes:
 
 ![Episodes](https://user-images.githubusercontent.com/40733044/92388117-5b440800-f134-11ea-850f-f5248b018734.png)
 
